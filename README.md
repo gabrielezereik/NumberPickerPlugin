@@ -10,7 +10,7 @@ cordova plugin add https://github.com/gabrielezereik/NumberPickerPlugin
 In order to open the number picker, all you have to do is to call this function:
 
 ```
-window.plugins.numberPicker.show(options, scope.onSuccess, scope.onError);
+window.plugins.numberPicker.show(options, onSuccess, onError);
 ```
 where the onSuccess function takes a single parameter with this structure:
 ```
