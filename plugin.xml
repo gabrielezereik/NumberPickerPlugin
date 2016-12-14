@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="it.jellyfish.cordova.plugins.numberpicker"
+        version="0.2.11">
+    <name>NumberPickerPlugin</name>
+    <description>Cordova plugin for android number picker</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova, jellyfish, numberpicker, number, picker</keywords>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="NumberPickerPlugin" >
+                <param name="android-package" value="it.jellyfish.cordova.plugins.NumberPickerPlugin"/>
+            </feature>
+        </config-file>
+        <js-module src="www/android/numberPicker.js" name="NumberPickerPlugin">
+            <clobbers target="NumberPickerPlugin" />
+        </js-module>
+        <source-file src="src/android/it/jellyfish/cordova/plugins/NumberPickerPlugin.java" target-dir="src/" />
+    </platform>
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="NumberPickerPlugin">
+                <param name="ios-package" value="JFNumberPicker" />
+            </feature>
+        </config-file>
+         <js-module src="www/ios/numberPicker.js" name="NumberPickerPlugin">
+            <clobbers target="NumberPickerPlugin" />
+        </js-module>
+        <header-file src="src/ios/JFNumberPicker.h" />
+        <source-file src="src/ios/JFNumberPicker.m" />
+        <resource-file src="src/ios/JFNumberPicker.xib" />
+
+    </platform>
+</plugin>
